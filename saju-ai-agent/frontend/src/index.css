@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  ┌─────────────────────────────────────────────────────────┐
+  │  shadcn/ui CSS 변수 — 여기서 색상을 커스텀하세요         │
+  │  https://ui.shadcn.com/themes                           │
+  │                                                         │
+  │  라이트 모드: :root { ... }                              │
+  │  다크  모드: .dark { ... }                              │
+  └─────────────────────────────────────────────────────────┘
+*/
+@layer base {
+  :root {
+    /* ── 배경 / 텍스트 ── */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    /* ── 카드 ── */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    /* ── 팝오버 ── */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* ── Primary 색상 (브랜드 컬러) ── */
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    /* ── Secondary ── */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* ── Muted ── */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* ── Accent ── */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* ── 위험/오류 ── */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* ── 테두리 / 입력 / 포커스링 ── */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    /* ── 모서리 반경 ── */
+    --radius: 0.5rem;
+
+    /* ── 차트 색상 ── */
+    --chart-1: 221.2 83.2% 53.3%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  .dark {
+    /* ── 배경 / 텍스트 ── */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    /* ── 카드 ── */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    /* ── 팝오버 ── */
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* ── Primary ── */
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    /* ── Secondary ── */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* ── Muted ── */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* ── Accent ── */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    /* ── 위험/오류 ── */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* ── 테두리 / 입력 / 포커스링 ── */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    /* ── 차트 색상 ── */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

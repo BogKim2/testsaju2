@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/saju/api_analyze_response.schema.json",
+  "title": "POST /api/saju/analyze success response",
+  "type": "object",
+  "required": ["ok", "computed_at", "saju", "elements", "ten_gods", "day_master", "strength", "year_fortune"],
+  "properties": {
+    "ok": { "const": true },
+    "computed_at": { "type": "string", "format": "date-time" },
+    "saju": {
+      "type": "object",
+      "required": ["year", "month", "day", "hour"],
+      "properties": {
+        "year": { "$ref": "#/$defs/pillar" },
+        "month": { "$ref": "#/$defs/pillar" },
+        "day": { "$ref": "#/$defs/pillar" },
+        "hour": { "$ref": "#/$defs/pillar" }
+      }
+    },
+    "elements": {
+      "type": "object",
+      "required": ["wood", "fire", "earth", "metal", "water"],
+      "properties": {
+        "wood": { "type": "integer", "minimum": 0 },
+        "fire": { "type": "integer", "minimum": 0 },
+        "earth": { "type": "integer", "minimum": 0 },
+        "metal": { "type": "integer", "minimum": 0 },
+        "water": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "ten_gods": { "type": "array", "items": { "type": "string" } },
+    "day_master": { "type": "string" },
+    "strength": { "type": "string" },
+    "year_fortune": {
+      "type": "object",
+      "required": ["target_year", "annual_pillar", "year_stem_ten_god_vs_day_master"],
+      "properties": {
+        "target_year": { "type": "integer" },
+        "annual_pillar": {
+          "type": "object",
+          "required": ["stem", "branch"],
+          "properties": {
+            "stem": { "type": "string" },
+            "branch": { "type": "string" }
+          }
+        },
+        "year_stem_ten_god_vs_day_master": { "type": "string" }
+      }
+    },
+    "meta": { "type": "object" },
+    "interpretation": {
+      "type": "object",
+      "properties": {
+        "markdown": { "type": "string" },
+        "model": { "type": "string" },
+        "prompt_version": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "pillar": {
+      "type": "object",
+      "required": ["stem", "branch"],
+      "properties": {
+        "stem": { "type": "string" },
+        "branch": { "type": "string" }
+      }
+    }
+  }
+}

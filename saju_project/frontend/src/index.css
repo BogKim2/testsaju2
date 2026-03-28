@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 사주 앱 테마 - 동양 신비 느낌의 다크 컬러 */
+    --background: 222 47% 7%;
+    --foreground: 45 30% 90%;
+    --card: 222 40% 11%;
+    --card-foreground: 45 30% 90%;
+    --popover: 222 40% 11%;
+    --popover-foreground: 45 30% 90%;
+    --primary: 38 90% 55%;
+    --primary-foreground: 222 47% 7%;
+    --secondary: 222 35% 18%;
+    --secondary-foreground: 45 30% 90%;
+    --muted: 222 35% 15%;
+    --muted-foreground: 45 15% 55%;
+    --accent: 38 70% 45%;
+    --accent-foreground: 45 30% 90%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 35% 20%;
+    --input: 222 35% 18%;
+    --ring: 38 90% 55%;
+    --radius: 0.6rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* 한자 폰트 */
+  .hanja {
+    font-family: "Noto Serif KR", "KoPub Batang", serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(38, 90%, 65%), hsl(20, 85%, 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-glow {
+    box-shadow: 0 0 20px hsla(38, 90%, 55%, 0.15);
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(222, 47%, 9%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(222, 35%, 25%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(38, 90%, 45%);
+}

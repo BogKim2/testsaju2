@@ -1,0 +1,22 @@
+{
+  "saju": {
+    "year": { "stem": "갑", "branch": "자" },
+    "month": { "stem": "을", "branch": "축" },
+    "day": { "stem": "병", "branch": "인" },
+    "hour": { "stem": "정", "branch": "묘" }
+  },
+  "elements": {
+    "wood": 2,
+    "fire": 2,
+    "earth": 1,
+    "metal": 1,
+    "water": 2
+  },
+  "ten_gods": ["비견", "겁재", "식신", "상관"],
+  "day_master": "병",
+  "strength": "중화",
+  "meta": {
+    "warnings": [],
+    "target_year": 2025
+  }
+}
